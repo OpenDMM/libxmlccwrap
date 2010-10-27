@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<index>
+  <title link="http://www.ant.uni-bremen.de/whomes/rinas/libxmlccwrap/">libxmlccwrap - a C++ wrapper around libxml2</title>
+  <author homepage="http://www.ant.uni-bremen.de/whomes/rinas/index.html"
+          email="mailto:jrinas@gmx.de">Jürgen Rinas</author>
+  
+  
+  <section title="What's this" label="this">
+    <p>
+      <i>libxmlccwrap</i> is a small C++ wrapper around  <a
+      href="http://www.xmlsoft.org/">libxml2</a> and <a
+      href="http://www.xmlsoft.org/XSLT.html">libxslt</a> - the XML libraries
+      used by the <a href="http://www.gnome.org/">GNOME project</a>.
+    </p>
+    <p>
+      It is very similar to 
+      <a href="http://lusis.org/~ari/xml++/">Ari Johnson's libxml++</a> wrapper
+      (some parts are even copied from his library).
+      <br/>
+      I have adopted the interface to my needs, because it replaces a small
+      (and buggy) XML parser I have written  some time ago (and never
+      released).
+    </p>  
+    <p>
+      Nearly everything of libxmlccwrap is written in the <i>namespace
+      xmlcc</i>. The names of the classes are <tt>XMLTree</tt>,
+      <tt>Element</tt> and <tt>Attribute</tt>  which should result in very
+      readable code. Just <tt>#include &lt;xmlccwrap/xmlccwrap.h&gt;</tt> and
+      use them.
+      <br/>
+      In addition you'll find the two function <tt>isolat1ToUTF8</tt> and
+      <tt>UTF8Toisolat1</tt> as wrappers around the corresponding libxml2
+      functions, because libxmlccwrap uses  <i>UTF8 for it's internal
+      representation</i>.
+      <br/>
+      If you want to go back to the data structures of libxml2  (e.g. to
+      interface with libxslt), you may use the function
+      <tt>exportXMLDocPtr</tt> provided in the file <tt>#include
+      &lt;xmlccwrap/libxmlexport.h&gt;</tt>.
+    </p>
+    <p>
+      As an example there is some code in the source package 
+      of libxmlccwrap: <tt>testlib/testlib.cc</tt>.
+    </p>
+  </section>  
+
+  <section title="ChangeLog" label="change">
+    <xi:include href="changelog.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+  </section>
+
+  <section title="Download" label="down">
+    <ul>
+      <li>license: LGPL</li>
+      <li>source package <a href="download/libxmlccwrap-0.0.12.tar.gz">libxmlccwrap-0.0.12.tar.gz</a>, 304k, 2006-Mar-28</li>
+      <li><a href="download/">old versions</a></li>
+    </ul>
+    <p>
+      I've prepared <i>debian packages</i> for this library (build on the current debian/testing system).
+      You can download this via 
+      <br/>
+      <tt>apt-get update; apt-get install libxmlccwrap libxmlccwrap-dev</tt>
+      <br/>
+      if you add
+      <br/>
+      <tt>deb http://www.ant.uni-bremen.de/whomes/rinas/ debs/</tt> 
+      <br/>
+      to your <tt>/etc/apt/sources.list</tt>.
+    </p>
+  </section>
+</index>

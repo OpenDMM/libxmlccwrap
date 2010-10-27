@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <title>libxmlccwrap - a C++ wrapper around libxml2</title>
+    <style type="text/css">
+<!--
+body      { color:#000000; background-color:#ffffff;}
+a:link    { color:#0000bb; }
+a:visited { color:#0000bb; }
+a:hover   { color:#0000bb; text-decoration:underline; }
+a:focus   { color:#0000bb; text-decoration:underline; }
+a:active  { color:#0000bb; background-color:#ffff00; text-decoration:underline; }
+img       { border-width:0px; }
+td.titlerow        { background-color:#eeeeee; }
+td.blankrow        { background-color:#ffffff; }
+td.contents        { background-color:#cccccc; }
+th.sectiontitlerow { background-color:#cccccc; color:#000000; }
+td.sectiontext     { background-color:#eeeeee; color:#000000; }
+td.validatorrow    { background-color:#ffffff; }
+-->
+    </style>
+    <link rel="shortcut icon" href="pics/favicon.ico"/>
+  </head>
+  <body>
+    <table style="margin-right:auto; margin-left:auto; text-align:center;">
+      <tr>
+        <td>
+          <a id="top"/>
+          <table summary="" border="0" cellspacing="2" cellpadding="5" width="750">
+            <tr>
+              <td align="center" colspan="4" class="titlerow">
+                <table>
+                  <tr>
+                    <th align="center" style="font-size:130%;">
+                      <a href="http://www.ant.uni-bremen.de/whomes/rinas/libxmlccwrap/">libxmlccwrap - a C++ wrapper around libxml2</a>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td align="center">
+                      <table>
+                        <tr>
+                          <td>
+                            <b>by</b>
+                          </td>
+                          <td align="left">
+                            <table>
+                              <tr>
+                                <td><b>Jürgen Rinas</b>&nbsp;<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#114;&#105;&#110;&#97;&#115;&#64;&#103;&#109;&#120;&#46;&#100;&#101;"><img src="pics/email32.png" height="20" width="20" alt="email"/></a>&nbsp;<a href="http://www.ant.uni-bremen.de/whomes/rinas/index.html"><img src="pics/home32.png" height="20" width="20" alt="homepage"/></a></td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <th colspan="4" class="blankrow">&nbsp;</th>
+            </tr>
+            <tr>
+              <td colspan="4" align="right" class="contents">
+                <table>
+                  <tr>
+                    <th align="right"><b>Contents</b> of this page
+	     </th>
+                  </tr>
+                  <tr>
+                    <td align="right"><a href="#this">What's this</a>&nbsp;<a href="#this"><img src="pics/down32.png" height="20" width="20" alt="down"/></a></td>
+                  </tr>
+                  <tr>
+                    <td align="right"><a href="#change">ChangeLog</a>&nbsp;<a href="#change"><img src="pics/down32.png" height="20" width="20" alt="down"/></a></td>
+                  </tr>
+                  <tr>
+                    <td align="right"><a href="#down">Download</a>&nbsp;<a href="#down"><img src="pics/down32.png" height="20" width="20" alt="down"/></a></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <th colspan="4" class="blankrow">&nbsp;</th>
+            </tr>
+            <tr>
+              <th align="left" colspan="4" class="sectiontitlerow">
+                <table summary="" border="0" cellspacing="0" cellpadding="0" width="100%">
+                  <tr>
+                    <th align="left"><a id="this"/>What's this</th>
+                    <td align="right"><a href="http://www.ant.uni-bremen.de/whomes/rinas/"><img src="pics/home32.png" height="20" width="20" alt="homepage"/></a>&nbsp;<a href="#top"><img src="pics/up32.png" height="20" width="20" alt="top of page"/></a></td>
+                  </tr>
+                </table>
+              </th>
+            </tr>
+            <tr>
+              <td align="left" colspan="4" class="sectiontext">
+                <p style="text-align:justify; margin-left:3%;margin-right:3%">
+      <i>libxmlccwrap</i> is a small C++ wrapper around  <a href="http://www.xmlsoft.org/">libxml2</a> and <a href="http://www.xmlsoft.org/XSLT.html">libxslt</a> - the XML libraries
+      used by the <a href="http://www.gnome.org/">GNOME project</a>.
+    </p>
+                <p style="text-align:justify; margin-left:3%;margin-right:3%">
+      It is very similar to 
+      <a href="http://lusis.org/~ari/xml++/">Ari Johnson's libxml++</a> wrapper
+      (some parts are even copied from his library).
+      <br/>
+      I have adopted the interface to my needs, because it replaces a small
+      (and buggy) XML parser I have written  some time ago (and never
+      released).
+    </p>
+                <p style="text-align:justify; margin-left:3%;margin-right:3%">
+      Nearly everything of libxmlccwrap is written in the <i>namespace
+      xmlcc</i>. The names of the classes are <tt>XMLTree</tt>,
+      <tt>Element</tt> and <tt>Attribute</tt>  which should result in very
+      readable code. Just <tt>#include &lt;xmlccwrap/xmlccwrap.h&gt;</tt> and
+      use them.
+      <br/>
+      In addition you'll find the two function <tt>isolat1ToUTF8</tt> and
+      <tt>UTF8Toisolat1</tt> as wrappers around the corresponding libxml2
+      functions, because libxmlccwrap uses  <i>UTF8 for it's internal
+      representation</i>.
+      <br/>
+      If you want to go back to the data structures of libxml2  (e.g. to
+      interface with libxslt), you may use the function
+      <tt>exportXMLDocPtr</tt> provided in the file <tt>#include
+      &lt;xmlccwrap/libxmlexport.h&gt;</tt>.
+    </p>
+                <p style="text-align:justify; margin-left:3%;margin-right:3%">
+      As an example there is some code in the source package 
+      of libxmlccwrap: <tt>testlib/testlib.cc</tt>.
+    </p>
+              </td>
+            </tr>
+            <tr>
+              <th colspan="4" class="blankrow">&nbsp;</th>
+            </tr>
+            <tr>
+              <th align="left" colspan="4" class="sectiontitlerow">
+                <table summary="" border="0" cellspacing="0" cellpadding="0" width="100%">
+                  <tr>
+                    <th align="left"><a id="change"/>ChangeLog</th>
+                    <td align="right"><a href="http://www.ant.uni-bremen.de/whomes/rinas/"><img src="pics/home32.png" height="20" width="20" alt="homepage"/></a>&nbsp;<a href="#top"><img src="pics/up32.png" height="20" width="20" alt="top of page"/></a></td>
+                  </tr>
+                </table>
+              </th>
+            </tr>
+            <tr>
+              <td align="left" colspan="4" class="sectiontext">
+                <p style="margin-left:3%;margin-right:3%"><span style="font-weight:bold;">libxmlccwrap</span> <span style="font-weight:bold;">0.0.12</span> - <span style="font-size:80%;">Mon, 30 Jan 2006 22:49:12 +0100</span></p>
+                <ul style="margin-left:3%;margin-right:3%">
+                  <li>a few cleanups</li>
+                </ul>
+                <p style="margin-left:3%;margin-right:3%"><span style="font-weight:bold;">libxmlccwrap</span> <span style="font-weight:bold;">0.0.11</span> - <span style="font-size:80%;">Thu, 18 Dec 2003 23:32:14 +0100</span></p>
+                <ul style="margin-left:3%;margin-right:3%">
+                  <li>changed license to LGPL</li>
+                </ul>
+                <p style="margin-left:3%;margin-right:3%"><span style="font-weight:bold;">libxmlccwrap</span> <span style="font-weight:bold;">0.0.10</span> - <span style="font-size:80%;">Tue, 25 Nov 2003 22:18:35 +0100</span></p>
+                <ul style="margin-left:3%;margin-right:3%">
+                  <li>introduced a XSLTTree class in order to save an XSLT Tree that is used multiple times to transform xml files</li>
+                  <li>updated to debhelper 4</li>
+                </ul>
+                <p style="margin-left:3%;margin-right:3%"><span style="font-weight:bold;">libxmlccwrap</span> <span style="font-weight:bold;">0.0.9</span> - <span style="font-size:80%;">Fri, 10 Oct 2003 16:27:49 +0200</span></p>
+                <ul style="margin-left:3%;margin-right:3%">
+                  <li>fixed copy constructor for empty element tree - tnx to L.Michalski for the hint</li>
+                </ul>
+                <p style="margin-left:3%;margin-right:3%"><span style="font-weight:bold;">libxmlccwrap</span> <span style="font-weight:bold;">0.0.8-1</span> - <span style="font-size:80%;">Sun, 10 Aug 2003 20:44:39 +0200</span></p>
+                <ul style="margin-left:3%;margin-right:3%">
+                  <li>updated to debian Standards-Version: 3.6.0</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th colspan="4" class="blankrow">&nbsp;</th>
+            </tr>
+            <tr>
+              <th align="left" colspan="4" class="sectiontitlerow">
+                <table summary="" border="0" cellspacing="0" cellpadding="0" width="100%">
+                  <tr>
+                    <th align="left"><a id="down"/>Download</th>
+                    <td align="right"><a href="http://www.ant.uni-bremen.de/whomes/rinas/"><img src="pics/home32.png" height="20" width="20" alt="homepage"/></a>&nbsp;<a href="#top"><img src="pics/up32.png" height="20" width="20" alt="top of page"/></a></td>
+                  </tr>
+                </table>
+              </th>
+            </tr>
+            <tr>
+              <td align="left" colspan="4" class="sectiontext">
+                <ul style="margin-left:3%;margin-right:3%">
+                  <li>license: LGPL</li>
+                  <li>source package <a href="download/libxmlccwrap-0.0.12.tar.gz">libxmlccwrap-0.0.12.tar.gz</a>, 304k, 2006-Mar-28</li>
+                  <li>
+                    <a href="download/">old versions</a>
+                  </li>
+                </ul>
+                <p style="text-align:justify; margin-left:3%;margin-right:3%">
+      I've prepared <i>debian packages</i> for this library (build on the current debian/testing system).
+      You can download this via 
+      <br/>
+      <tt>apt-get update; apt-get install libxmlccwrap libxmlccwrap-dev</tt>
+      <br/>
+      if you add
+      <br/>
+      <tt>deb http://www.ant.uni-bremen.de/whomes/rinas/ debs/</tt> 
+      <br/>
+      to your <tt>/etc/apt/sources.list</tt>.
+    </p>
+              </td>
+            </tr>
+            <tr>
+              <td align="right" colspan="4" class="validatorrow">
+                <a href="http://validator.w3.org/check/referer">
+                  <img src="pics/valid-xhtml11.png" height="31" width="88" alt="Valid XHTML 1.1!"/>
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

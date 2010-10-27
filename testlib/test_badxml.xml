@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root comment="just a nice test">
+  <quotedchars lessthan="&lt;" geaterthan="&gt;" amp="&amp;" quot="&quot;">&lt; &gt; &amp; &quot;</quotedchars>
+  <missing_end>
+
+  <with bad_attribute />
+</root>

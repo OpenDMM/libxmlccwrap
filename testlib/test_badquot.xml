@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<root comment="just a nice test">
+  <quotedchars lessthan="<" geaterthan=">"></quotedchars>
+</root>
