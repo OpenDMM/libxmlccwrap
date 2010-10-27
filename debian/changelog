@@ -1,0 +1,93 @@
+libxmlccwrap (0.0.12-1) unstable; urgency=low
+
+  * switched to debhelper 5
+  * split up debian and source changelogs
+  * new release
+
+ -- juergen <jrinas@gmx.de>  Mon, 30 Jan 2006 22:49:12 +0100
+
+libxmlccwrap (0.0.11) unstable; urgency=low
+
+  * changed license to LGPL
+
+ -- Juergen Rinas <jrinas@gmx.de>  Thu, 18 Dec 2003 23:32:14 +0100
+
+libxmlccwrap (0.0.10) unstable; urgency=low
+
+  * introduced a XSLTTree class in order to save an XSLT Tree that is
+    used multiple times to transform xml files
+  * updated to debhelper 4
+
+ -- Juergen Rinas <jrinas@gmx.de>  Tue, 25 Nov 2003 22:18:35 +0100
+
+libxmlccwrap (0.0.9) unstable; urgency=low
+
+  * fixed copy constructor for empty element tree - tnx to L.Michalski
+    for the hint
+
+ -- Juergen Rinas <jrinas@gmx.de>  Fri, 10 Oct 2003 16:27:49 +0200
+
+libxmlccwrap (0.0.8-1) unstable; urgency=low
+
+  * updated to debian Standards-Version: 3.6.0
+
+ -- Juergen Rinas <jrinas@gmx.de>  Sun, 10 Aug 2003 20:44:39 +0200
+
+libxmlccwrap (0.0.8) unstable; urgency=low
+
+  * in method writeBuffer: changed free to xmlFree to avoid memory leaks
+    (tnx to O.Pelsch)
+
+ -- Juergen Rinas <jrinas@gmx.de>  Sun, 25 May 2003 11:55:15 +0200
+
+libxmlccwrap (0.0.7) unstable; urgency=low
+
+  * removed the contructor that loads a xml file
+  * renamed getReadErrorString to getErrorString
+  * added libxslt as a dependency - now it's also a wrapper around the
+    most used xslt function: generate html files with scripts
+  * added method .xslt(xsltfilename, outputfilename, parameter) to class
+    XMLTree
+
+ -- Juergen Rinas <jrinas@gmx.de>  Tue, 29 Apr 2003 21:21:24 +0200
+
+libxmlccwrap (0.0.6) unstable; urgency=low
+
+  * added some error handling capabilities to the wrapper: read error
+    messages from libxml2 will be collected and stored in a string
+    variable.
+    This variable can be accessed with getReadErrorString(). 
+
+ -- Juergen Rinas <jrinas@gmx.de>  Sat, 26 Apr 2003 20:58:26 +0200
+
+libxmlccwrap (0.0.5) unstable; urgency=low
+
+  * added a method to class XMLTree to read with DTD validation 
+
+ -- Juergen Rinas <jrinas@gmx.de>  Mon,  7 Apr 2003 14:36:18 +0200
+
+libxmlccwrap (0.0.4) unstable; urgency=low
+
+  * switched to gcc/g++ 3.2
+  * deleted method initialized()
+
+ -- Juergen Rinas <jrinas@gmx.de>  Mon, 24 Mar 2003 21:11:47 +0100
+
+libxmlccwrap (0.0.3) unstable; urgency=low
+
+  * aviod SEGV when parsing a (html)file without any elements
+
+ -- Juergen Rinas <jrinas@gmx.de>  Mon, 30 Dec 2002 11:42:07 +0100
+
+libxmlccwrap (0.0.2) unstable; urgency=low
+
+  * changed filename "# writing test_badquot_out.xml" to
+    "test_badquot_out.xml"
+
+ -- Juergen Rinas <jrinas@gmx.de>  Thu, 19 Dec 2002 08:28:44 +0100
+
+libxmlccwrap (0.0.1) unstable; urgency=low
+
+  * initial release
+
+ -- Juergen Rinas <jrinas@gmx.de>  Sat, 14 Dec 2002 10:23:37 +0100

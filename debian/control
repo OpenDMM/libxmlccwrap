@@ -1,0 +1,30 @@
+Source: libxmlccwrap
+Section: libs
+Priority: optional
+Maintainer: Juergen Rinas <jrinas@gmx.de>
+Build-Depends: debhelper (>> 5.0.0)
+Standards-Version: 3.6.2.2
+
+Package: libxmlccwrap
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: A C++ interface to the GNOME XML library (libxml2)
+ XML is a metalanguage to let you design your own markup language.
+ This is a C++ interface to the GNOME XML library (version 2).
+ .
+ Homepage: http://www.ant.uni-bremen.de/whomes/rinas/libxmlccwrap/
+
+Package: libxmlccwrap-dev
+Section: devel
+Priority: extra
+Architecture: any
+Depends: libxmlccwrap (= ${Source-Version})
+Description: A C++ interface to the GNOME XML library (libxml2)
+ XML is a metalanguage to let you design your own markup language.
+ This is a C++ interface to the GNOME XML library (version 2).
+ .
+ Install this package if you with to develop your own programs using this
+ library.
+ .
+ Homepage: http://www.ant.uni-bremen.de/whomes/rinas/libxmlccwrap/
